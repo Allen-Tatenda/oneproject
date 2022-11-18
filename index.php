@@ -5,6 +5,7 @@ if(isset($_SESSION['ID'])){
     //session_start();
     $status = 'loggedin';
     $loginClass = 'notloggedin';
+    $id = $_SESSION['ID'];
 }
 else{
     $status = 'notloggedin';
@@ -44,7 +45,17 @@ else{
             <div class="header-content <?php echo $status;?>">
                 <h4 class="header-subtitle" >Hello, I am</h4>
                 <h1 class="header-title"><?php echo $firstname." ".$lastname; ?></h1>
-                <h6 class="header-mono" >Born : <?php echo $dob. " | Gender : ". $gender; ?></h6>
+                <h6 class="header-mono" >Born : <?php echo $dob. " | Gender : ". $gender; ?>
+                <br> <br>
+                <?php
+                
+                $sql = $conn->query("SELECT * FROM loginlog WHERE userid = '$id'  ORDER BY id DESC");
+                
+                if($row = $sql->fetch_assoc()){
+                    echo "Last logged in :".$row['dates'];
+                }
+                
+                ?></h6>
                 <a href ="logout.php" ><button class="btn btn-primary btn-rounded"><i class="ti-hand-point-left pr-2"></i>Logout</button></a>
             </div>
 
