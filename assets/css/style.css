@@ -1,0 +1,22 @@
+.loggedin {
+    display: block;
+}
+
+.notloggedin {
+    display: none;
+}
+
+canvas {
+    background: white;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+button a {
+    color: white !important;
+}
+
+.login-error {
+    color: red !important;
+}
