@@ -1,3 +1,3 @@
 You can test this at 
 
-whytee.rf.gd
+http://whytee.rf.gd
