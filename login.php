@@ -1,6 +1,17 @@
 <?php
 date_default_timezone_set("Africa/Harare");
 
+//include nonce 
+require_once('noncedate.php');
+//create new instance of the class
+$nonce = new Nonce();
+//generate nonce
+$myToken = $nonce->generateNonce(25, 'form_login', 10);
+//verify nonce
+$result = $nonce->verifyNonce($myToken);
+//display result
+var_dump($result);
+
 $conn = mysqli_connect("localhost","root","","assessdb");
 
 
