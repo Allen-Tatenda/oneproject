@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set("Africa/Harare");
+ //$date = date("Y-m-d | h:i:sa");
+
 //session_start();
 
 define('NONCE_SECRET', 'CEIUHET745T$^&%&%^gFGBF$^');
@@ -6,8 +9,9 @@ define('NONCE_SECRET', 'CEIUHET745T$^&%&%^gFGBF$^');
 class Nonce {
     //generate salt
     private function generateSalt($length = 10){
+        $date = date('l jS \of F Y h:i:s A');
         //set up random characters
-        $chars='1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+        $chars=$date;
         //get the length of the random characters
         $char_len = strlen($chars)-1;
         //store output
