@@ -10,7 +10,7 @@ $myToken = $nonce->generateNonce(25, 'form_login', 10);
 //verify nonce
 $result = $nonce->verifyNonce($myToken);
 //display result
-var_dump($result);
+//var_dump($result);
 
 $conn = mysqli_connect("localhost","root","","assessdb");
 
